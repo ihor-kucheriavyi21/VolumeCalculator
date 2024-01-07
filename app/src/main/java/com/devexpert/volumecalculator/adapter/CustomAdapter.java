@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter<Shape> {
 
-    private ArrayList<Shape> shapeArrayList;
+    ArrayList<Shape> shapeArrayList;
     Context context;
 
     public CustomAdapter(ArrayList<Shape> shapeArrayList, Context context) {
@@ -47,8 +47,9 @@ public class CustomAdapter extends ArrayAdapter<Shape> {
                     false
             );
 
-            viewHolder.shapeName = (TextView) convertView.findViewById(R.id.textItem);
-            viewHolder.shapeImg = (ImageView) convertView.findViewById(R.id.imageItem);
+            viewHolder.shapeName = (TextView) convertView.findViewById(R.id.shapeName);
+            viewHolder.shapeImg = (ImageView) convertView.findViewById(R.id.shapeImg);
+
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();

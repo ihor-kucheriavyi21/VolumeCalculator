@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         customAdapter = new CustomAdapter(shapeArrayList, getApplicationContext());
 
         gridView.setAdapter(customAdapter);
-qwe
+        gridView.setNumColumns(2);
+
 
     }
 }
