@@ -1,12 +1,16 @@
 package com.devexpert.volumecalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.devexpert.volumecalculator.adapter.CustomAdapter;
 import com.devexpert.volumecalculator.model.Shape;
+import com.devexpert.volumecalculator.shape.Sphere;
 
 import java.util.ArrayList;
 
@@ -42,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         gridView.setAdapter(customAdapter);
         gridView.setNumColumns(2);
 
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent currentIntent = new Intent(getApplicationContext(), Sphere.class);
+                startActivity(currentIntent);
+            }
+        });
 
     }
 }

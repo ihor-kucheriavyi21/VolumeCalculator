@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">VolumeCalculator</string>
     <string name="text1">text1</string>
+    <string name="calculate_sphere_volume">Calculate sphere volume</string>
+    <string name="please_enter_the_radius">Please enter the radius</string>
+    <string name="result">Result:</string>
+    <string name="calculate_volume">Calculate volume</string>
 </resources>
