@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.devexpert.volumecalculator.adapter.CustomAdapter;
 import com.devexpert.volumecalculator.model.Shape;
+import com.devexpert.volumecalculator.shape.Cube;
+import com.devexpert.volumecalculator.shape.Cylinder;
+import com.devexpert.volumecalculator.shape.Prism;
 import com.devexpert.volumecalculator.shape.Sphere;
 
 import java.util.ArrayList;
@@ -49,8 +52,24 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent currentIntent = new Intent(getApplicationContext(), Sphere.class);
-                startActivity(currentIntent);
+                Intent intent;
+                switch (position) {
+                    case 0: // Sphere
+                        intent = new Intent(getApplicationContext(), Sphere.class);
+                        break;
+                    case 1: // Cylinder
+                        intent = new Intent(getApplicationContext(), Cylinder.class);
+                        break;
+                    case 2: // Cube
+                        intent = new Intent(getApplicationContext(), Cube.class);
+                        break;
+                    case 3: // Prism
+                        intent = new Intent(getApplicationContext(), Prism.class);
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + position);
+                }
+                startActivity(intent);
             }
         });
 
