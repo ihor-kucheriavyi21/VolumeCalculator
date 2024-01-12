@@ -19,6 +19,7 @@ public class Sphere extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sphere);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sphereRadius = findViewById(R.id.editRadiusSphere);
         title = findViewById(R.id.pageHeader);
