@@ -4,6 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/calculate_background"
     tools:context=".shape.Prism">
+
+    <TextView
+        android:id="@+id/pageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="39dp"
+        android:gravity="center"
+        android:text="@string/calculate_prism_volume"
+        android:textColor="@color/ExtraDarkGray"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/enterShapeHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enterShapeArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:gravity="center"
+        android:hint="@string/please_enter_shape_area"
+        android:inputType="number"
+        android:textColorHint="@color/ExtraDarkGray"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculateVolume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeHeight"
+        tools:layout_editor_absoluteX="83dp" />
+
+    <EditText
+        android:id="@+id/enterShapeHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:gravity="center"
+        android:hint="@string/please_enter_height"
+        android:inputType="number"
+        android:textColorHint="@color/ExtraDarkGray"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/enterShapeArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+
+    <TextView
+        android:id="@+id/volumeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="359dp"
+        android:gravity="center"
+        android:text="@string/result"
+        android:textColor="@color/ExtraDarkGray"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/calculateVolume"
+        app:layout_constraintStart_toStartOf="@+id/calculateVolume"
+        app:layout_constraintTop_toBottomOf="@+id/calculateVolume" />
+
+    <Button
+        android:id="@+id/calculateVolume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/calculate_volume"
+        android:textColor="@color/ExtraDarkGray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/volumeResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeArea" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

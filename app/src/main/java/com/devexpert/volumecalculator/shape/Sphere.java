@@ -9,20 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.devexpert.volumecalculator.R;
 
+import java.util.Objects;
+
 public class Sphere extends AppCompatActivity {
 
     EditText sphereRadius;
-    TextView title, result;
+    TextView result;
     Button calculateVolume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sphere);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         sphereRadius = findViewById(R.id.editRadiusSphere);
-        title = findViewById(R.id.pageHeader);
         result = findViewById(R.id.sphereVolumeResult);
         calculateVolume = findViewById(R.id.calculateVolume);
         calculateVolume.setOnClickListener(view -> {

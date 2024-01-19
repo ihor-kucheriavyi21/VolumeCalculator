@@ -5,4 +5,20 @@
     <string name="please_enter_the_radius">Please enter the radius</string>
     <string name="result">Result:</string>
     <string name="calculate_volume">Calculate volume</string>
+    <string name="title_activity_cylinder">Cylinder</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="calculate_cube_volume">Calculate Cube Volume</string>
+    <string name="please_enter_edge_size">Please enter edge size</string>
+    <string name="calculate_cylinder_volume">Calculate Cylinder Volume</string>
+    <string name="please_enter_radius">Please enter radius</string>
+    <string name="calculate_prism_volume">Calculate Prism Volume</string>
+    <string name="please_enter_height">Please enter height</string>
+    <string name="please_enter_shape_area">Please enter shape area</string>
 </resources>

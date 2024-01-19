@@ -9,25 +9,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.devexpert.volumecalculator.R;
 
+import java.util.Objects;
+
 public class Cylinder extends AppCompatActivity {
-    EditText cylinderRadius;
-    TextView title, result;
+    EditText cylinderRadius, cylinderHeight;
+    TextView result;
     Button calculateVolume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cylinder);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         cylinderRadius = findViewById(R.id.enterShapeRadius);
-        title = findViewById(R.id.pageHeader);
+        cylinderHeight = findViewById(R.id.enterShapeHeight);
+
         result = findViewById(R.id.volumeResult);
         calculateVolume = findViewById(R.id.calculateVolume);
         calculateVolume.setOnClickListener(view -> {
             String enteredRadius = cylinderRadius.getText().toString();
+            String enteredHeight = cylinderHeight.getText().toString();
             double radius = Double.parseDouble(enteredRadius);
-            double volume = (4.0 / 3) * Math.PI * Math.pow(radius, 3);
+            double height = Double.parseDouble(enteredHeight);
+            double volume = Math.PI * Math.pow(radius, 2) * height;
             result.setText(String.valueOf(volume));
         });
     }

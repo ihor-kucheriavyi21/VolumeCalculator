@@ -12,14 +12,26 @@
         android:theme="@style/Theme.VolumeCalculator"
         tools:targetApi="31">
         <activity
+            android:name=".shape.Prism"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".shape.Cylinder"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".shape.Cube"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".shape.Sphere"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
