@@ -4,19 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/gradient_background"
+    android:theme="@style/Theme.VolumeCalculator.NoActionBar"
     tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/volume_calculator"
+            android:textColor="@android:color/white"
+            android:textStyle="italic|bold"
+
+            android:textSize="24sp"/>
+
+
+</androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/pageHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="120sp"
         android:gravity="center"
-        android:text="Volume calculator"
-        android:textColor="@color/black"
-        android:textSize="44sp"
-        android:textStyle="bold"
+        android:text="@string/choose_figure"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="italic|bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,4 +56,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

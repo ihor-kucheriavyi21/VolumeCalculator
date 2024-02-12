@@ -21,4 +21,6 @@
     <string name="calculate_prism_volume">Calculate Prism Volume</string>
     <string name="please_enter_height">Please enter height</string>
     <string name="please_enter_shape_area">Please enter shape area</string>
+    <string name="volume_calculator">Volume Calculator</string>
+    <string name="choose_figure">Choose figure:</string>
 </resources>
