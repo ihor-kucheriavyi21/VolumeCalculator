@@ -25,12 +25,12 @@
             android:layout_gravity="center"
             android:text="@string/volume_calculator"
             android:textColor="@android:color/white"
-            android:textStyle="italic|bold"
+            android:textSize="24sp"
 
-            android:textSize="24sp"/>
+            android:textStyle="italic|bold" />
 
 
-</androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/pageHeader"

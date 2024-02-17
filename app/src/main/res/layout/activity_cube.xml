@@ -5,33 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
+    android:theme="@style/Theme.VolumeCalculator.NoActionBar"
     tools:context=".shape.Cube">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="151dp"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/volume_calculator"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="italic|bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/cubeImg"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/cube"
+        app:layout_constraintEnd_toStartOf="@+id/pageHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/pageHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="30dp"
         android:gravity="center"
-        android:text="@string/calculate_cube_volume"
-        android:textColor="@color/ExtraDarkGray"
-        android:textSize="32sp"
+        android:text="Cube Volume"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/cubeImg"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/editEdgeSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="120dp"
         android:gravity="center"
         android:hint="@string/please_enter_edge_size"
-        android:textColorHint="@color/ExtraDarkGray"
-        android:textSize="22sp"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
@@ -40,7 +73,7 @@
         android:id="@+id/volumeResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="344dp"
+        android:layout_marginTop="552dp"
         android:gravity="center"
         android:text="@string/result"
         android:textColor="@color/ExtraDarkGray"
