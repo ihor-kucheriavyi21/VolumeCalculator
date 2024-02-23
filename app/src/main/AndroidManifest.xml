@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VolumeCalculator"
+        android:theme="@style/Theme.VolumeCalculator.NoActionBar"
         tools:targetApi="31">
         <activity
             android:name=".shape.Prism"
@@ -21,16 +21,19 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".shape.Cube"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".shape.Sphere"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.Design.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

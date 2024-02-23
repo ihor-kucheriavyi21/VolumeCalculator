@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.devexpert.volumecalculator.R;
 
@@ -22,7 +23,10 @@ public class Cube extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cube);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         edgeSize = findViewById(R.id.editEdgeSize);
         result = findViewById(R.id.volumeResult);
@@ -33,5 +37,11 @@ public class Cube extends AppCompatActivity {
             double volume = Math.pow(edge, 3);
             result.setText(String.valueOf(volume));
         });
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed(); // This method is called when the up button is pressed. Just finish the current activity.
+        return true;
     }
 }

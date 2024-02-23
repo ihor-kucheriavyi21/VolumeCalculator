@@ -4,77 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/calculate_background"
+    android:background="@drawable/gradient_background"
     tools:context=".shape.Cylinder">
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/cylinderImg"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="130dp"
+        android:src="@drawable/cylinder"
+        app:layout_constraintEnd_toStartOf="@+id/shapeVolume"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/pageHeader"
-        android:layout_width="match_parent"
+        android:id="@+id/shapeVolume"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="30dp"
         android:gravity="center"
-        android:text="@string/calculate_cylinder_volume"
-        android:textColor="@color/ExtraDarkGray"
-        android:textSize="26sp"
+        android:text="Cylinder Volume"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/enterShapeHeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/cylinderImg"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
     <EditText
         android:id="@+id/enterShapeRadius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:hint="@string/please_enter_radius"
         android:inputType="number"
-        android:textColorHint="@color/ExtraDarkGray"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/calculateVolume"
-        app:layout_constraintStart_toStartOf="@+id/enterShapeHeight"
-        app:layout_constraintTop_toBottomOf="@+id/enterShapeHeight" />
+        android:textColorHint="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cylinderImg" />
 
     <EditText
         android:id="@+id/enterShapeHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:hint="@string/please_enter_height"
         android:inputType="number"
-        android:textColorHint="@color/ExtraDarkGray"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/enterShapeRadius"
+        android:textColorHint="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
-
-    <TextView
-        android:id="@+id/volumeResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="359dp"
-        android:gravity="center"
-        android:text="@string/result"
-        android:textColor="@color/ExtraDarkGray"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/calculateVolume"
-        app:layout_constraintStart_toStartOf="@+id/calculateVolume"
-        app:layout_constraintTop_toBottomOf="@+id/calculateVolume" />
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeRadius" />
 
     <Button
         android:id="@+id/calculateVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculate_volume"
-        android:textColor="@color/ExtraDarkGray"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/volumeResult"
-        app:layout_constraintStart_toStartOf="@+id/enterShapeRadius"
-        app:layout_constraintTop_toBottomOf="@+id/enterShapeRadius" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeHeight" />
+    <TextView
+        android:id="@+id/volumeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="@string/result"
+        android:textColor="@color/resultColor"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateVolume" />
 </androidx.constraintlayout.widget.ConstraintLayout>

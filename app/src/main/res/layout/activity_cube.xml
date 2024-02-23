@@ -8,26 +8,10 @@
     android:theme="@style/Theme.VolumeCalculator.NoActionBar"
     tools:context=".shape.Cube">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="151dp"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/volume_calculator"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="italic|bold" />
-    </androidx.appcompat.widget.Toolbar>
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/cubeImg"
@@ -36,12 +20,12 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="130dp"
         android:src="@drawable/cube"
-        app:layout_constraintEnd_toStartOf="@+id/pageHeader"
+        app:layout_constraintEnd_toStartOf="@+id/shapeVolume"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
-        android:id="@+id/pageHeader"
+        android:id="@+id/shapeVolume"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
@@ -67,36 +51,34 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pageHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/shapeVolume" />
 
     <TextView
         android:id="@+id/volumeResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="552dp"
         android:gravity="center"
+        android:layout_marginTop="40dp"
         android:text="@string/result"
-        android:textColor="@color/ExtraDarkGray"
+        android:textColor="@color/resultColor"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/calculateVolume" />
 
     <Button
         android:id="@+id/calculateVolume"
         android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/calculate_volume"
-        android:textColor="@color/ExtraDarkGray"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/volumeResult"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEdgeSize"
-        app:layout_constraintVertical_bias="0.511" />
+        app:layout_constraintTop_toBottomOf="@+id/editEdgeSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
