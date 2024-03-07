@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.devexpert.volumecalculator.R;
 
@@ -21,10 +22,13 @@ public class Sphere extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sphere);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         sphereRadius = findViewById(R.id.editRadiusSphere);
-        result = findViewById(R.id.sphereVolumeResult);
+        result = findViewById(R.id.volumeResult);
         calculateVolume = findViewById(R.id.calculateVolume);
         calculateVolume.setOnClickListener(view -> {
             String enteredRadius = sphereRadius.getText().toString();

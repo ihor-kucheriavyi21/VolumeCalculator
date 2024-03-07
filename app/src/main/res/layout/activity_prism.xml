@@ -4,81 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/calculate_background"
+    android:background="@drawable/gradient_background"
     tools:context=".shape.Prism">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/prismImage"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/prism"
+        app:layout_constraintEnd_toStartOf="@+id/shapeVolume"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/shapeVolume"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="30dp"
         android:gravity="center"
-        android:text="@string/calculate_prism_volume"
-        android:textColor="@color/ExtraDarkGray"
-        android:textSize="26sp"
+        android:text="Prism Volume"
+        android:textColor="@color/white"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/enterShapeHeight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/prismImage"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/enterShapeArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:hint="@string/please_enter_shape_area"
         android:inputType="number"
-        android:textColorHint="@color/ExtraDarkGray"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/calculateVolume"
+        android:textColorHint="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterShapeHeight"
-        tools:layout_editor_absoluteX="83dp" />
+        app:layout_constraintTop_toBottomOf="@+id/prismImage" />
 
     <EditText
         android:id="@+id/enterShapeHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:hint="@string/please_enter_height"
         android:inputType="number"
-        android:textColorHint="@color/ExtraDarkGray"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/enterShapeArea"
+        android:textColorHint="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shapeVolume" />
-
-    <TextView
-        android:id="@+id/volumeResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="359dp"
-        android:gravity="center"
-        android:text="@string/result"
-        android:textColor="@color/ExtraDarkGray"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/calculateVolume"
-        app:layout_constraintStart_toStartOf="@+id/calculateVolume"
-        app:layout_constraintTop_toBottomOf="@+id/calculateVolume" />
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeArea" />
 
     <Button
         android:id="@+id/calculateVolume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/calculate_volume"
-        android:textColor="@color/ExtraDarkGray"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/volumeResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterShapeArea" />
+        app:layout_constraintTop_toBottomOf="@+id/enterShapeHeight" />
+    <TextView
+        android:id="@+id/volumeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:text="@string/result"
+        android:textColor="@color/resultColor"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calculateVolume" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
