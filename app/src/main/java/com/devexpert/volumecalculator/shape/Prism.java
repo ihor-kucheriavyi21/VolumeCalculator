@@ -1,6 +1,8 @@
 package com.devexpert.volumecalculator.shape;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.devexpert.volumecalculator.R;
-
-import java.util.Objects;
 
 public class Prism extends AppCompatActivity {
 
@@ -29,6 +29,8 @@ public class Prism extends AppCompatActivity {
 
         prismArea = findViewById(R.id.enterShapeArea);
         prismHeight = findViewById(R.id.enterShapeHeight);
+        prismHeight.addTextChangedListener(textWatcher);
+        prismArea.addTextChangedListener(textWatcher);
 
         result = findViewById(R.id.volumeResult);
         calculateVolume = findViewById(R.id.calculateVolume);
@@ -40,5 +42,28 @@ public class Prism extends AppCompatActivity {
             double volume = area * height;
             result.setText(String.valueOf(volume));
         });
+    }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            checkFieldsForEmptyValues();
+        }
+    };
+
+    private void checkFieldsForEmptyValues() {
+        Button submitButton = findViewById(R.id.calculateVolume);
+
+        EditText prismArea = findViewById(R.id.enterShapeArea);
+        EditText prismHeight = findViewById(R.id.enterShapeHeight);
+        submitButton.setEnabled(!prismArea.getText().toString().isEmpty() && !prismHeight.getText().toString().isEmpty());
     }
 }

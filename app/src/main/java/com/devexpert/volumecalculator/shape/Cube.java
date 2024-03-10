@@ -1,6 +1,8 @@
 package com.devexpert.volumecalculator.shape;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.devexpert.volumecalculator.R;
-
-import java.util.Objects;
 
 public class Cube extends AppCompatActivity {
 
@@ -29,6 +29,7 @@ public class Cube extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         edgeSize = findViewById(R.id.editEdgeSize);
+        edgeSize.addTextChangedListener(textWatcher);
         result = findViewById(R.id.volumeResult);
         calculateVolume = findViewById(R.id.calculateVolume);
         calculateVolume.setOnClickListener(view -> {
@@ -39,9 +40,28 @@ public class Cube extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed(); // This method is called when the up button is pressed. Just finish the current activity.
-        return true;
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            checkFieldsForEmptyValues();
+        }
+    };
+
+    private void checkFieldsForEmptyValues() {
+        Button submitButton = findViewById(R.id.calculateVolume);
+
+        EditText editEdgeSize = findViewById(R.id.editEdgeSize);
+
+        submitButton.setEnabled(!editEdgeSize.getText().toString().isEmpty());
     }
+
+
 }

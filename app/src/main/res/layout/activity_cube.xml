@@ -46,7 +46,7 @@
         android:layout_marginTop="120dp"
         android:gravity="center"
         android:hint="@string/please_enter_edge_size"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColorHint="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +79,7 @@
         app:layout_constraintBottom_toTopOf="@+id/volumeResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEdgeSize" />
+        app:layout_constraintTop_toBottomOf="@+id/editEdgeSize"
+        android:enabled="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
